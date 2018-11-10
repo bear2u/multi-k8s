@@ -9,16 +9,16 @@ script:
   - docker run tommy/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t tommy/multi-client ./client
-  - docker build -t tommy/multi-nginx ./nginx
-  - docker build -t tommy/multi-server ./server
-  - docker build -t tommy/multi-worker ./worker
+  - docker build -t stephengrider/multi-client ./client
+  - docker build -t stephengrider/multi-nginx ./nginx
+  - docker build -t stephengrider/multi-server ./server
+  - docker build -t stephengrider/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # Take those images and push them the docker hub
-  - docker push tommy/multi-client
-  - docker push tommy/multi-nginx
-  - docker push tommy/multi-server
-  - docker push tommy/multi-worker
+  # Take those images and push them to docker hub
+  - docker push stephengrider/multi-client
+  - docker push stephengrider/multi-nginx
+  - docker push stephengrider/multi-server
+  - docker push stephengrider/multi-worker
 
 
