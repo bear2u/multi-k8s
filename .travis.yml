@@ -21,6 +21,7 @@ after_success:
   - docker push bear2u/multi-server
   - docker push bear2u/multi-worker
 
+  
 deploy:
   provider: elasticbeanstalk
   region: ap-northeast-2
